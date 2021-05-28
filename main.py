@@ -1,4 +1,3 @@
-
 from tkinter import *
 from tkinter import colorchooser
 curr_x, curr_y = 0, 0
@@ -8,7 +7,6 @@ def locate_xy(event):
     curr_x, curr_y = event.x, event.y
     print(curr_x, curr_y)
 
-
 def addline(event):
     global curr_x, curr_y
     c.create_line((curr_x, curr_y, event.x, event.y), fill=color, width=3)
@@ -17,7 +15,6 @@ def addline(event):
 def pen_color():
     global color
     color = colorchooser.askcolor()[1]
-
 
 root = Tk()
 root.title('Paint')
@@ -36,6 +33,5 @@ c = Canvas(root, width=500, height=400)
 c.pack()
 c.bind('<Button-1>', locate_xy)
 c.bind('<B1-Motion>', addline)
-
 
 root.mainloop()
